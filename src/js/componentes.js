@@ -86,3 +86,5 @@ ulFiltros.addEventListener('click', (event) => {
     }
 
 });
+
+// TODO: Agregar conteo de pendientes.

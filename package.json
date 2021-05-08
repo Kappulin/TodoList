@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "buildp": "webpack --config webpack.prod.js",
-    "buildd": "webpack --config webpack.config.js",
-    "startprd": "webpack serve --port 8081 --config webpack.prod.js",
-    "start": "webpack serve --port 8081 --config webpack.config.js"
+    "build-p": "webpack --config webpack.prod.js",
+    "build-d": "webpack --config webpack.config.js",
+    "start-p": "webpack serve --port 8081 --config webpack.prod.js",
+    "start-d": "webpack serve --port 8081 --config webpack.config.js"
   },
   "author": "Francisco Pallero",
   "license": "ISC",
