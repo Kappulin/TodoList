@@ -8,6 +8,7 @@ const txtInput = document.querySelector('.new-todo');
 const ulFiltros = document.querySelector('.filters');
 const anchorFiltros = document.querySelectorAll('.filtro');
 const contador = document.querySelector('.todo-count');
+
 footer.setAttribute('hidden', '');
 
 export const crearTodoHtml = (todo) => {
@@ -25,6 +26,7 @@ export const crearTodoHtml = (todo) => {
     const div = document.createElement('div');
     div.innerHTML = htmlTodo;
     divTodoList.append(div.firstElementChild);
+    contador.innerHTML=`<strong>${divTodoList.children.length}</strong> pendiente(s)</span>`
     return div.firstElementChild;
 }
 
@@ -49,6 +51,7 @@ divTodoList.addEventListener('click', (event) => {
         todoList.eliminarTodo(todoId);
         divTodoList.removeChild(todoElemento);
         if (divTodoList.children.length === 0) footer.setAttribute('hidden', '')
+        contador.innerHTML=`<strong>${divTodoList.children.length}</strong> pendiente(s)</span>`
     }
 });
 
@@ -62,6 +65,7 @@ btnBorrar.addEventListener('click', () => {
 
     if (divTodoList.children.length === 0) footer.setAttribute('hidden', '')
     todoList.eliminarCompletados();
+    contador.innerHTML=`<strong>${divTodoList.children.length}</strong> pendiente(s)</span>`
 });
 
 ulFiltros.addEventListener('click', (event) => {
@@ -86,6 +90,3 @@ ulFiltros.addEventListener('click', (event) => {
         }
     }
 });
-
-
-// TODO: Agregar conteo de pendientes.
