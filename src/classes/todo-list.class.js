@@ -37,4 +37,13 @@ export class TodoList {
         this.todos = (localStorage.getItem('todo') ? JSON.parse(localStorage.getItem('todo')) : [])
         this.todos = this.todos.map(Todo.fromJson);
     }
+
+    cargarCompletados() {
+        let cantidadCompletados = 0;
+        for (const todo of this.todos) {
+            if (todo.completado === true) cantidadCompletados++
+        }
+        console.log(cantidadCompletados);
+        return cantidadCompletados;
+    }
 }

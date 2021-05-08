@@ -26,7 +26,7 @@ export const crearTodoHtml = (todo) => {
     const div = document.createElement('div');
     div.innerHTML = htmlTodo;
     divTodoList.append(div.firstElementChild);
-    contador.innerHTML=`<strong>${divTodoList.children.length}</strong> pendiente(s)</span>`
+    contador.innerHTML=`<strong>${divTodoList.children.length-todoList.cargarCompletados()}</strong> pendiente(s)</span>`
     return div.firstElementChild;
 }
 
@@ -51,8 +51,8 @@ divTodoList.addEventListener('click', (event) => {
         todoList.eliminarTodo(todoId);
         divTodoList.removeChild(todoElemento);
         if (divTodoList.children.length === 0) footer.setAttribute('hidden', '')
-        contador.innerHTML=`<strong>${divTodoList.children.length}</strong> pendiente(s)</span>`
     }
+    contador.innerHTML=`<strong>${divTodoList.children.length-todoList.cargarCompletados()}</strong> pendiente(s)</span>`
 });
 
 btnBorrar.addEventListener('click', () => {
@@ -65,7 +65,7 @@ btnBorrar.addEventListener('click', () => {
 
     if (divTodoList.children.length === 0) footer.setAttribute('hidden', '')
     todoList.eliminarCompletados();
-    contador.innerHTML=`<strong>${divTodoList.children.length}</strong> pendiente(s)</span>`
+    contador.innerHTML=`<strong>${divTodoList.children.length-todoList.cargarCompletados()}</strong> pendiente(s)</span>`
 });
 
 ulFiltros.addEventListener('click', (event) => {
