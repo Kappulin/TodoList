@@ -1,17 +1,6 @@
 # TodoList
 
-Este es el proyecto inicial para crear aplicaciones utilizando webpack.
+Proyecto que permite la gestión de tareas pendientes con un sencllo despliegue y manejo de checklist.
 
-### Notas:
-
--Recordar construir los módulos de Node.
-
-```
-npm install
-```
--Para construir el build, recuerden:
-
-```
-npm run build
-```
-
+### Demo de aplicación:
+[TodoList](https://kappulin.github.io/TodoList/)
