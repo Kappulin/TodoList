@@ -16,7 +16,7 @@ export const crearTodoHtml = (todo) => {
     const htmlTodo = `
             <li class="${(todo.completado) ? 'completed' : ''}" data-id="${todo.id}">
                 <div class="view">
-                    <input class="toggle" type="checkbox" ${(todo.completado) ? 'checked' : ''}>
+                    <input class="toggle" type="checkbox" ${(todo.completado) ? 'checked' : `${(todo.completado)?true:''}`}>
                     <label>${todo.tarea}</label>
                     <button class="destroy"></button>
                 </div>
